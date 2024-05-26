@@ -3,9 +3,33 @@ name: warg-server
 
 services:
   api:
+    build: .
+    develop:
+      watch:
+        - path: .
+          action: rebuild
     environment:
+      WARG_NAMESPACE: supabase
+      WARG_OPERATOR_KEY_FILE: /run/secrets/warg_operator_key
       WARG_DATA_STORE: postgres
       WARG_DATABASE_URL: "postgres://warg:${POSTGRES_PASSWORD}@postgres:5432/warg"
+    secrets:
+      - warg_operator_key
+    ports:
+      - 8090:8090
+    volumes:
+      - content:/var/lib/warg-server/data
+    depends_on:
+      migration:
+        condition: service_completed_successfully
+
+  web:
+    build: ./web
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    ports:
+      - 3000:3000
     depends_on:
       migration:
         condition: service_completed_successfully
@@ -35,14 +59,17 @@ services:
       retries: 5
     secrets:
       - postgres_password
-    expose:
-      - 5432
+    ports:
+      - 5432:5432
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
 secrets:
   postgres_password:
     environment: "POSTGRES_PASSWORD"
+  warg_operator_key:
+    environment: "WARG_OPERATOR_KEY"
 
 volumes:
   postgres-data:
+  content:

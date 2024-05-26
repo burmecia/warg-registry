@@ -4073,7 +4073,7 @@ dependencies = [
 
 [[package]]
 name = "warg-api"
-version = "0.7.0-dev"
+version = "0.8.0-dev"
 dependencies = [
  "indexmap 2.2.6",
  "itertools 0.12.1",
@@ -4086,7 +4086,7 @@ dependencies = [
 
 [[package]]
 name = "warg-cli"
-version = "0.7.0-dev"
+version = "0.8.0-dev"
 dependencies = [
  "anyhow",
  "async-recursion",
@@ -4128,7 +4128,7 @@ dependencies = [
 
 [[package]]
 name = "warg-client"
-version = "0.7.0-dev"
+version = "0.8.0-dev"
 dependencies = [
  "anyhow",
  "async-recursion",
@@ -4172,14 +4172,14 @@ dependencies = [
 
 [[package]]
 name = "warg-credentials"
-version = "0.7.0-dev"
+version = "0.8.0-dev"
 dependencies = [
  "warg-client",
 ]
 
 [[package]]
 name = "warg-crypto"
-version = "0.7.0-dev"
+version = "0.8.0-dev"
 dependencies = [
  "anyhow",
  "base64 0.21.7",
@@ -4199,7 +4199,7 @@ dependencies = [
 
 [[package]]
 name = "warg-protobuf"
-version = "0.7.0-dev"
+version = "0.8.0-dev"
 dependencies = [
  "anyhow",
  "pbjson",
@@ -4216,7 +4216,7 @@ dependencies = [
 
 [[package]]
 name = "warg-protocol"
-version = "0.7.0-dev"
+version = "0.8.0-dev"
 dependencies = [
  "anyhow",
  "base64 0.21.7",
@@ -4239,7 +4239,7 @@ dependencies = [
 
 [[package]]
 name = "warg-server"
-version = "0.7.0-dev"
+version = "0.8.0-dev"
 dependencies = [
  "anyhow",
  "axum",
@@ -4275,7 +4275,7 @@ dependencies = [
 
 [[package]]
 name = "warg-transparency"
-version = "0.7.0-dev"
+version = "0.8.0-dev"
 dependencies = [
  "anyhow",
  "criterion",
