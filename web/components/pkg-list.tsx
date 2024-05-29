@@ -13,7 +13,9 @@ dayjs.extend(utc)
 dayjs.extend(localizedFormat)
 
 function makePkgSpec(rel: any) : string {
-  return "fdw_package_url 'wargs://wrappers.supabase.com',\n"
+  const protocol = window.location.protocol.replace(/^http/, "warg")
+  const url = `${protocol}//${window.location.host}`
+  return `fdw_package_url '${url}',\n`
     + `fdw_package_name '${rel.package}',\n`
     + `fdw_package_version '${rel.version}',\n`
 }
