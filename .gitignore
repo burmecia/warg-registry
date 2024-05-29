@@ -13,3 +13,9 @@ locked.wasm
 
 # IDE specific files
 .idea
+
+# env file
+.env
+
+# SSL certs
+nginx/ssl/*.pem
